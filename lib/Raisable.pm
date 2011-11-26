@@ -53,7 +53,7 @@ my $raise = method ($class: $code, $args, $is_optional, $prev, %loc) {
 my $run_guarded = method ($class: $code, $args, $is_optional, %loc) {
     my $value = topicalize($args, $code);
     unless ($class->ACCEPT($value, @loc{qw( file line )})) {
-        return $class->$raise($code, $args, $is_optional, $value, %loc); 
+        return $class->$raise($code, $args, $is_optional, $value, %loc);
     }
     return $value;
 };
