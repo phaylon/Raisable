@@ -214,7 +214,7 @@ This role is an extension of L<Throwable>, implementing conditions that
 might be resolved by handlers set up in an outer dynamical scope.
 
 Since every C<Raisable> is also a L<Throwable> and can turn into an
-exception, you can use every extensino you could use for L<Throwable>
+exception, you can use every extension you could use for L<Throwable>
 exceptions like description message generation or payload collection.
 
 =head2 Declaring condition classes
@@ -243,7 +243,7 @@ give a closer specification of the condition:
     1;
 
 The condition object will be available to all resolution handlers. As
-such, the attributes and methods of your conditino class should encapsulate
+such, the attributes and methods of your condition class should encapsulate
 everything that's required to possibly resolve the condition.
 
 =head2 Raising conditions explicitly
@@ -374,7 +374,7 @@ L</handle> on C<Raisable> itself.
 
 In the above example, we have handlers that try to resolve all conditions
 of the class they were declared on. The fixture handler simply returned
-an undefined value if it couldn't handle the line. Instead, it could've
+an undefined value if it couldn't handle the line. Instead, it could have
 supplied a separate match routine:
 
     Condition::Unparseable
@@ -457,7 +457,7 @@ condition. This will return a special marker telling the condition system
 to stop trying to resolve the issue and return an undefined value. If the
 condition was raised as L</required>, it will be turned into an exception
 before returning to the code that originally raised it. But if it was
-declared optional, the calling code will receive an undefiend value at
+declared optional, the calling code will receive an undefined value at
 this point and can choose to handle the unresolved condition.
 
 You can also pass a value to L</final>. This is not useful in this simple
@@ -466,7 +466,7 @@ becomes meaningful in more complicated settings.
 
 =back
 
-Note that both of these options stop conditino resolution at the point of
+Note that both of these options stop condition resolution at the point of
 use and you're basically isolating the matched conditions from the
 outside.
 
